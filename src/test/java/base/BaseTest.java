@@ -1,7 +1,6 @@
 package base;
 
 import com.google.common.io.Files;
-import org.apache.log4j.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,32 +24,9 @@ public class BaseTest {
 
     private EventFiringWebDriver driver;
     protected HomePage homePage;
-    protected Logger logger;
 
     @BeforeClass
     public void setUp() {
-        // creates pattern layout
-        PatternLayout layout = new PatternLayout();
-        String conversionPattern = "%-7p %d [%t] %c %x - %m%n";
-        layout.setConversionPattern(conversionPattern);
-
-        // creates console appender
-        ConsoleAppender consoleAppender = new ConsoleAppender();
-        consoleAppender.setLayout(layout);
-        consoleAppender.activateOptions();
-
-        // creates file appender
-        FileAppender fileAppender = new FileAppender();
-        fileAppender.setFile("applog3.txt");
-        fileAppender.setLayout(layout);
-        fileAppender.activateOptions();
-
-        // configures the root logger
-        Logger rootLogger = Logger.getRootLogger();
-        rootLogger.setLevel(Level.DEBUG);
-        rootLogger.addAppender(consoleAppender);
-        rootLogger.addAppender(fileAppender);
-        logger = Logger.getLogger(BaseTest.class);
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.args", "--disable-logging");
