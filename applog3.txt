@@ -1,0 +1,4 @@
+INFO    2020-03-11 11:48:05,058 [main] base.BaseTest  - Login Test Starts
+INFO    2020-03-11 11:52:42,750 [main] login.LoginTests  - Login Test Starts
+INFO    2020-03-11 11:55:05,002 [main] login.LoginTests  - Login Test Starts
+INFO    2020-03-11 12:10:08,368 [main] login.LoginTests  - Login Test Starts
